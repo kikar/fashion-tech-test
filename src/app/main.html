@@ -2,7 +2,15 @@
 
   <h1>Article Editor</h1>
 
-  <div ng-repeat="block in $ctrl.blocks">
+  <div ng-repeat="block in $ctrl.blocks track by $index">
+    <div>
+      <button class="btn btn-default" ng-click="$ctrl.editBlock($index)">
+        <span class="glyphicon glyphicon-edit"></span>
+      </button>
+      <button class="btn btn-default" ng-click="$ctrl.removeBlock($index)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
     <text-block ng-if="block.type ===  'text'" edit="false" article="block"></text-block>
     <product-block ng-if="block.type ===  'products'" edit="false"></product-block>
   </div>

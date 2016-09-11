@@ -21,6 +21,14 @@ class MainController {
       }
     ];
   }
+
+  editBlock(index) {
+    console.log(`Editing block ${index}`);
+  }
+
+  removeBlock(index) {
+    this.blocks.splice(index, 1);
+  }
 }
 
 export const main = {

@@ -4,8 +4,6 @@ class TextBlockController {
   }
 
   $onInit() {
-    console.log(this.article);
-    console.log(this.edit);
   }
 }
 
