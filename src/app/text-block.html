@@ -1,0 +1,8 @@
+<div ng-if="!$ctrl.edit">
+  <h3>{{ $ctrl.article.title }}</h3>
+  <p>{{ $ctrl.article.body }}</p>
+</div>
+<div ng-if="$ctrl.edit">
+  <input type="text" ng-model="$ctrl.article.title" placeholder="Insert a title">
+  <textarea placeholder="Insert a body"></textarea>
+</div>

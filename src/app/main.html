@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1>Article Editor</h1>
+
+  <div ng-repeat="block in $ctrl.blocks">
+    <text-block ng-if="block.type ===  'text'" edit="false" article="block"></text-block>
+    <product-block ng-if="block.type ===  'products'" edit="false"></product-block>
+  </div>
+
+  <div>
+    <button class="btn btn-default">Add Text</button>
+    <button class="btn btn-default">Add Products</button>
+  </div>
+
+  <pre>{{ $ctrl.blocks | json:2 }}</pre>
+
+</div>
