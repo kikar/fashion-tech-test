@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Block Modal</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <text-block ng-if="$ctrl.block.type ===  'text'" edit="true" article="$ctrl.block"></text-block>
+    <product-block ng-if="$ctrl.block.type ===  'products'" edit="true"></product-block>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.close()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.dismiss()">Cancel</button>
+</div>

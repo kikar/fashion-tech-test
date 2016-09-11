@@ -1,6 +1,7 @@
 class MainController {
   /** @ngInject */
-  constructor() {
+  constructor($uibModal) {
+    this.$uibModal = $uibModal;
   }
 
   $onInit() {
@@ -22,12 +23,37 @@ class MainController {
     ];
   }
 
-  editBlock(index) {
-    console.log(`Editing block ${index}`);
+  editBlock(block) {
+    let modal = this.$uibModal.open({
+      component: 'blockModal',
+      resolve: {
+        block: () => {return block;}
+      }
+    });
   }
 
   removeBlock(index) {
     this.blocks.splice(index, 1);
+  }
+
+  addBlock(type) {
+    let modal = this.$uibModal.open({
+      component: 'blockModal',
+      resolve: {
+        block: () => {
+          return {
+            type
+          };
+        }
+      }
+    });
+
+    modal.result
+    .then(result => {
+      console.log('Close', result);
+    }, reason => {
+      console.log('Dismiss', reason);
+    });
   }
 }
 

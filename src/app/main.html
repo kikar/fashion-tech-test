@@ -4,7 +4,7 @@
 
   <div ng-repeat="block in $ctrl.blocks track by $index">
     <div>
-      <button class="btn btn-default" ng-click="$ctrl.editBlock($index)">
+      <button class="btn btn-default" ng-click="$ctrl.editBlock(block)">
         <span class="glyphicon glyphicon-edit"></span>
       </button>
       <button class="btn btn-default" ng-click="$ctrl.removeBlock($index)">
@@ -16,8 +16,8 @@
   </div>
 
   <div>
-    <button class="btn btn-default">Add Text</button>
-    <button class="btn btn-default">Add Products</button>
+    <button class="btn btn-default" ng-click="$ctrl.addBlock('text')">Add Text</button>
+    <button class="btn btn-default" ng-click="$ctrl.addBlock('products')">Add Products</button>
   </div>
 
   <pre>{{ $ctrl.blocks | json:2 }}</pre>
