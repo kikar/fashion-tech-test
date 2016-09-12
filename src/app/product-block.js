@@ -1,7 +1,5 @@
 class ProductBlockController {
   /** @ngInject */
-  constructor() {
-  }
 }
 
 export const productBlock = {

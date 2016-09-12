@@ -1,7 +1,7 @@
 export function productsFactory(PRODUCTS) {
   /** @ngInject */
 
-  let factory = {
+  const factory = {
     getAllProducts
   };
 
@@ -10,4 +10,4 @@ export function productsFactory(PRODUCTS) {
   function getAllProducts() {
     return PRODUCTS;
   }
-};
+}

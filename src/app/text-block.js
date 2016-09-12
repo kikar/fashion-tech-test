@@ -1,10 +1,5 @@
 class TextBlockController {
   /** @ngInject */
-  constructor() {
-  }
-
-  $onInit() {
-  }
 }
 
 export const textBlock = {

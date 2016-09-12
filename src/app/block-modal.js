@@ -19,6 +19,6 @@ export const blockModal = {
   bindings: {
     resolve: '<',
     close: '&',
-    dismiss: '&',
+    dismiss: '&'
   }
 };
