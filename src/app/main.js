@@ -7,28 +7,35 @@ class MainController {
   $onInit() {
     this.blocks = [
       {
-        "type": "text",
-        "title": "This is a title",
-        "body": "This is body text"
+        type: "text",
+        title: "This is a title",
+        body: "This is body text"
       },
       {
-        "type": "products",
-        "products": [167687, 168012]
+        type: "products",
+        products: [167687, 168012]
       },
       {
-        "type": "text",
-        "title": "Title of final text block",
-        "body": "This is body text again"
+        type: "text",
+        title: "Title of final text block",
+        body: "This is body text again"
       }
     ];
   }
 
   editBlock(block) {
-    let modal = this.$uibModal.open({
+    const modal = this.$uibModal.open({
       component: 'blockModal',
       resolve: {
-        block: () => {return block;}
+        block: () => {
+          return angular.copy(block);
+        }
       }
+    });
+
+    modal.result
+    .then(updatedBlock => {
+      angular.copy(updatedBlock, block);
     });
   }
 
@@ -37,7 +44,7 @@ class MainController {
   }
 
   addBlock(type) {
-    let modal = this.$uibModal.open({
+    const modal = this.$uibModal.open({
       component: 'blockModal',
       resolve: {
         block: () => {

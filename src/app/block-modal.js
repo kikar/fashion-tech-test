@@ -1,19 +1,15 @@
 class BlockModalController {
   /** @ngInject */
-  constructor() {
-  }
-
   $onInit() {
     this.block = this.resolve.block;
-    console.log(this.block);
   }
 
-  close() {
-    this.close({ $value: 'Chiuso' });
+  save() {
+    this.close({$value: this.block});
   }
 
-  dismiss() {
-    this.dismiss({ $value: 'Cancellato' });
+  cancel() {
+    this.dismiss();
   }
 }
 
@@ -23,6 +19,6 @@ export const blockModal = {
   bindings: {
     resolve: '<',
     close: '&',
-    dismiss: '&'
+    dismiss: '&',
   }
 };
