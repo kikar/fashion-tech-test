@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body" id="modal-body">
     <text-block ng-if="$ctrl.block.type ===  'text'" edit="true" article="$ctrl.block"></text-block>
-    <product-block ng-if="$ctrl.block.type ===  'products'" edit="true"></product-block>
+    <product-block ng-if="$ctrl.block.type ===  'products'" edit="true" selected="$ctrl.block"></product-block>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="$ctrl.save()">Save</button>

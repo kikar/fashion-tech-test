@@ -23,6 +23,10 @@ class ProductBlockController {
       });
     }
   }
+
+  selectProduct(index) {
+    this.selectedProducts[index].isSelected != this.selectedProducts[index].isSelected;
+  }
 }
 
 export const productBlock = {

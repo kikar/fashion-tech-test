@@ -1,3 +1,10 @@
-<div ng-if="!$ctrl.edit" ng-repeat="product in $ctrl.selectedProducts track by $index">
-  <span>{{product.id}}</span>
-</div>
+<div class="products">
+  <div ng-repeat="product in $ctrl.selectedProducts track by $index" class="product"
+    ng-click="$ctrl.selectProduct($index)" ng-class="{'selected': product.isSelected}">
+    <div>
+      <img ng-src="{{product.image}}">
+    </div>
+    <h5>{{product.title}}</h5>
+    <span>{{product.price | currency:'£'}}</span>
+  </div>
+<div>
