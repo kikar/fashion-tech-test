@@ -56,10 +56,8 @@ class MainController {
     });
 
     modal.result
-    .then(result => {
-      console.log('Close', result);
-    }, reason => {
-      console.log('Dismiss', reason);
+    .then(newBlock => {
+      this.blocks.push(newBlock);
     });
   }
 }
