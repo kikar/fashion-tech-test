@@ -26,6 +26,7 @@ class MainController {
   editBlock(index) {
     const modal = this.$uibModal.open({
       component: 'blockModal',
+      size: 'lg',
       resolve: {
         block: () => {
           return angular.copy(this.blocks[index]);
@@ -46,6 +47,7 @@ class MainController {
   addBlock(type) {
     const modal = this.$uibModal.open({
       component: 'blockModal',
+      size: 'lg',
       resolve: {
         block: () => {
           return {

@@ -1,23 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
 .products {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: flex-start;
 
   .product {
     cursor: pointer;
+    // overflow: hidden;
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
 
     &.selected {
       background-color: teal;
     }
   }
 
-  .product div {
-    display: inline-block;
+  .thumbnail {
+    overflow: hidden;
 
     img {
       object-fit: cover;
       width: 200px;
       height: 250px;
     }
+  }
+}
+
+.block {
+  position: relative;
+  margin-bottom: 40px;
+  margin-left: 20px;
+
+  .action-bar {
+    position: absolute;
+    display: none;
+    right: 0;
+  }
+
+  &:hover .action-bar {
+    display: block;
+  }
+}
+
+.buttons {
+  margin-left: 20px;
+  margin-bottom: 40px;
+
+  .btn {
+    margin-right: 10px;
   }
 }

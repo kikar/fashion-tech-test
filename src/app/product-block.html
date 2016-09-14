@@ -1,6 +1,6 @@
 <div class="products">
   <div ng-if="!$ctrl.edit" ng-repeat="product in $ctrl.PRODUCTS | isSelected:$ctrl.selected.products" class="product">
-    <div>
+    <div class="thumbnail">
       <img ng-src="{{product.image}}">
     </div>
     <h5>{{product.title}}</h5>
@@ -8,7 +8,7 @@
   </div>
   <div ng-if="$ctrl.edit" ng-repeat="product in $ctrl.PRODUCTS" class="product"
     ng-click="$ctrl.selectProduct($index)" ng-class="{'selected': product.isSelected}">
-    <div>
+    <div class="thumbnail">
       <img ng-src="{{product.image}}">
     </div>
     <h5>{{product.title}}</h5>

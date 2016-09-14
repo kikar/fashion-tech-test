@@ -2,8 +2,8 @@
 
   <h1>Article Editor</h1>
 
-  <div ng-repeat="block in $ctrl.blocks track by $index">
-    <div>
+  <div ng-repeat="block in $ctrl.blocks track by $index" class="block">
+    <div class="action-bar">
       <button class="btn btn-default" ng-click="$ctrl.editBlock($index)">
         <span class="glyphicon glyphicon-edit"></span>
       </button>
@@ -15,7 +15,7 @@
     <product-block ng-if="block.type ===  'products'" edit="false" selected="block"></product-block>
   </div>
 
-  <div>
+  <div class="buttons">
     <button class="btn btn-default" ng-click="$ctrl.addBlock('text')">Add Text</button>
     <button class="btn btn-default" ng-click="$ctrl.addBlock('products')">Add Products</button>
   </div>
