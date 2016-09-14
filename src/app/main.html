@@ -4,7 +4,7 @@
 
   <div ng-repeat="block in $ctrl.blocks track by $index">
     <div>
-      <button class="btn btn-default" ng-click="$ctrl.editBlock(block)">
+      <button class="btn btn-default" ng-click="$ctrl.editBlock($index)">
         <span class="glyphicon glyphicon-edit"></span>
       </button>
       <button class="btn btn-default" ng-click="$ctrl.removeBlock($index)">

@@ -23,19 +23,19 @@ class MainController {
     ];
   }
 
-  editBlock(block) {
+  editBlock(index) {
     const modal = this.$uibModal.open({
       component: 'blockModal',
       resolve: {
         block: () => {
-          return angular.copy(block);
+          return angular.copy(this.blocks[index]);
         }
       }
     });
 
     modal.result
     .then(updatedBlock => {
-      angular.copy(updatedBlock, block);
+      this.blocks[index] = updatedBlock;
     });
   }
 

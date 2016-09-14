@@ -10,22 +10,24 @@ class ProductBlockController {
     }
 
     if (this.edit) {
-      this.selectedProducts = angular.copy(this.PRODUCTS);
-      this.selectedProducts = this.selectedProducts.map(product => {
-        if (this.selected.products.includes(product.id)) {
-          product.isSelected = true;
-        }
-        return product;
-      });
-    } else {
-      this.selectedProducts = this.PRODUCTS.filter(product => {
-        return this.selected.products.includes(product.id);
+      this.PRODUCTS.forEach(product => {
+        product.isSelected = this.selected.products.includes(product.id);
       });
     }
   }
 
   selectProduct(index) {
-    this.selectedProducts[index].isSelected != this.selectedProducts[index].isSelected;
+    if (!this.edit) {
+      return;
+    }
+    this.PRODUCTS[index].isSelected = !this.PRODUCTS[index].isSelected;
+
+    if (this.PRODUCTS[index].isSelected) {
+      this.selected.products.push(this.PRODUCTS[index].id);
+    } else {
+      let idIndex = this.selected.products.indexOf(this.PRODUCTS[index].id);
+      this.selected.products.splice(idIndex, 1);
+    }
   }
 }
 

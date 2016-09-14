@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 import {constantsModule} from './constants';
-import {factoriesModule} from './app/factories/index';
+import {helpersModule} from './app/factories/index';
 
 import 'angular-ui-router';
 import 'angular-ui-bootstrap';
@@ -17,7 +17,7 @@ import './index.scss';
 export const app = 'app';
 
 angular
-  .module(app, ['ui.router', 'ui.bootstrap', constantsModule, factoriesModule])
+  .module(app, ['ui.router', 'ui.bootstrap', constantsModule, helpersModule])
   .config(routesConfig)
   .component('app', main)
   .component('productBlock', productBlock)

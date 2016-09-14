@@ -3,12 +3,16 @@
   width: 100%;
   flex-wrap: wrap;
 
-  .product div {
-    display: inline-block;
+  .product {
+    cursor: pointer;
 
     &.selected {
-      background-color: green;
+      background-color: teal;
     }
+  }
+
+  .product div {
+    display: inline-block;
 
     img {
       object-fit: cover;

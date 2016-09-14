@@ -17,7 +17,7 @@ export const blockModal = {
   template: require('./block-modal.html'),
   controller: BlockModalController,
   bindings: {
-    resolve: '<',
+    resolve: '=',
     close: '&',
     dismiss: '&'
   }
