@@ -1,5 +1,5 @@
-# grabble-test
-A test for Grabble
+# Fashion Tech test
+A test for fashion article builder
 
 ### To serve
 1. Use node 6.x `nvm use 6`
